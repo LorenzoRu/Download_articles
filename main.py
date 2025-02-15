@@ -1,6 +1,5 @@
 import requests
 import pandas as pd
-import os
 from urllib.parse import quote
 import time
 from pathlib import Path
