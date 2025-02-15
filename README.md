@@ -25,23 +25,62 @@ Ce script permet de vérifier l'accessibilité des articles académiques via leu
      - `downloads_articles` : Contiendra les articles téléchargés.
      - `reports` : Contiendra un fichier Excel avec le rapport des opérations effectuées.
 
-## Fonctionnement
+## Environnement Virtuel (venv)
 
-Le script utilise l'API [Unpaywall](https://unpaywall.org/) pour vérifier si un article est en libre accès. Si c'est le cas, il le télécharge et génère un rapport.
+Pour éviter les conflits entre les dépendances de différents projets, il est recommandé d'utiliser un environnement virtuel. Voici comment configurer et activer un environnement virtuel sur Windows et macOS :
 
-### Avertissement
+### Création et activation d'un environnement virtuel
 
-- **Limitation des requêtes** : Unpaywall impose des limites sur le nombre de requêtes que vous pouvez effectuer. Assurez-vous de respecter ces limites pour éviter d'être bloqué.
-- **Liens utiles** :
-  - [Unpaywall](https://unpaywall.org/) : Pour plus d'informations sur l'API Unpaywall.
-  - [Mendeley](https://www.mendeley.com/) : Pour gérer et exporter votre bibliographie.
+#### Sur Windows
 
-## Dépendances
+1. **Ouvrir l'invite de commandes (cmd)** :
+   - Cliquez sur le bouton Démarrer et tapez "cmd".
+   - Appuyez sur Entrée pour ouvrir l'invite de commandes.
 
-Assurez-vous d'avoir les bibliothèques suivantes installées :
-- `requests`
-- `pandas`
+2. **Naviguer vers le répertoire de votre projet** :
+   - Utilisez la commande `cd` pour accéder au répertoire de votre projet. Par exemple :
+     ```cmd
+     cd chemin\vers\votre\projet
+     ```
 
-Vous pouvez les installer en utilisant pip :
+3. **Créer un environnement virtuel** :
+   - Exécutez la commande suivante pour créer un environnement virtuel nommé `venv` :
+     ```cmd
+     python -m venv venv
+     ```
+
+4. **Activer l'environnement virtuel** :
+   - Utilisez la commande suivante pour activer l'environnement virtuel :
+     ```cmd
+     venv\Scripts\activate
+     ```
+
+#### Sur macOS
+
+1. **Ouvrir le terminal** :
+   - Vous pouvez trouver le terminal dans Applications > Utilitaires > Terminal.
+
+2. **Naviguer vers le répertoire de votre projet** :
+   - Utilisez la commande `cd` pour accéder au répertoire de votre projet. Par exemple :
+     ```bash
+     cd chemin/vers/votre/projet
+     ```
+
+3. **Créer un environnement virtuel** :
+   - Exécutez la commande suivante pour créer un environnement virtuel nommé `venv` :
+     ```bash
+     python3 -m venv venv
+     ```
+
+4. **Activer l'environnement virtuel** :
+   - Utilisez la commande suivante pour activer l'environnement virtuel :
+     ```bash
+     source venv/bin/activate
+     ```
+
+### Installation des dépendances
+
+Une fois l'environnement virtuel activé, installez les dépendances listées dans le fichier `requirements.txt` :
+
 ```bash
-pip install requests pandas
+pip install -r requirements.txt
